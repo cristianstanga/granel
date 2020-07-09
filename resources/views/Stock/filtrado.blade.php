@@ -4,9 +4,20 @@
 
 @section('content_header')
 <div class="row">
-  <h1 class="m-0 text-dark">Inventario</h1>
-  <div class="col-sm-8"></div>
-  <a href="#" class="btn btn-primary" href="#">Recargar Máquina</a>
+  <h1 class="m-0 text-dark">Reportes</h1>
+  <div class="col-sm-12">
+      <form action="{{route('ventas.filtrado')}}" method='POST'>
+      <select name="maquina" class="form-control">
+          @csrf
+          <option value='t'>Total</option>
+          @foreach($maquinas as $maquina)
+             <option value='{{$maquina->id}}'>{{$maquina->nombre}}</option>
+          @endforeach
+      </select>
+      <input type="submit" class="btn btn-primary" value="Seleccionar">
+      </form>
+  </div>
+  <!--<a href="#" class="btn btn-primary" href="#">Recargar Máquina</a>-->
 </div>
     <hr>
 @stop

@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Ventas</b>Granel',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -232,58 +232,44 @@ return [
 
     'menu' => [
         [
-            'rol' => '',
             'text' => 'search',
             'search' => false,
             'topnav' => false,
         ],
         [
-            'rol' => '',
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
         [
-            'rol' => 'A',
             'text'        => 'Productos',
             'url'         => 'producto/mostrar',
             'icon'        => 'far fa-fw fa-file',
             'label'       => 2,
             'label_color' => 'success',
         ],
-        ['header' => 'Opciones', 'rol' => '',],
+        ['header' => 'Opciones'],
         [
-            'rol'   => 'C',
             'text' => 'Mis Compras',
             'url'  => 'ventas/compras',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'rol'   => 'A',
             'text' => 'Inventario',
             'url'  => 'stock/maquinas',
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
-            'rol'      => 'A',
             'text'    => 'Reportes',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [
-                    'rol' => 'A',
                     'text' => 'Máquinas',
-                    'url'  => '#',
+                    'url'  => 'reporte/filtro',
                 ],
                 [
-                    'rol' => 'A',
-                    'text'    => 'Zonas',
-                    'url'     => '#',
-                    
-                ],
-                [
-                    'rol' => 'A',
                     'text' => 'Usuarios',
-                    'url'  => '#',
+                    'url'  => 'user/todos',
                 ],
             ],
         ],

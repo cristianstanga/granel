@@ -40,13 +40,25 @@ Route::get('/ventas/allventas_excel', 'VentasController@AllVentas_excel')->name(
 Route::get('/ventas/grafico', 'VentasController@graficos')->name('grafico'); //Descarga el archivo
 Route::get('/ventas/agrupado', 'VentasController@productosAgrupados')->name('agrupados'); //Descarga el archivo
 Route::get('/ventas/compras', 'VentasController@MisCompras')->name('ventas.compras'); 
+Route::get('/ventas/compras/{id}', 'VentasController@compras')->name('ventas.user'); 
 Route::get('/ventas/detalle/{id}', 'VentasController@Detalle')->name('ventas.detalle'); 
 Route::get('/ventas/elegir/{maquina_id}/{producto_id}', 'VentasController@elegir')->name('ventas.elegir'); 
+Route::get('/ventas/todas/{id}', 'VentasController@MaquinaCompra')->name('ventas.deta'); 
 
 
 //Inventario de máquinas (Stock y máquinas)
 Route::get('/stock/maquinas', 'MaquinasController@AllMaquinas')->name('maquinas.todas'); 
-Route::get('/stock/detalle/{id}', 'MaquinasController@detalle')->name('maquinas.detalle'); 
+Route::get('/stock/detalle/{id}', 'MaquinasController@detalle')->name('maquinas.detalle');
+Route::get('/stock/maquina', 'MaquinasController@AllMaquinas')->name('maquinas.toda'); 
+Route::post('/ventas/filtrado', 'MaquinasController@filtro')->name('ventas.filtrado'); 
+Route::get('reporte/filtro', 'MaquinasController@filtroCompleto')->name('ven'); 
+
+//Usuarios
+Route::get('/user/todos', 'MaquinasController@AllUser')->name('user.todo'); 
+
+
+
+
 
 
 
