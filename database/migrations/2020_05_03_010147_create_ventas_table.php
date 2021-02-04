@@ -22,8 +22,8 @@ class CreateVentasTable extends Migration
             $table->char('estado');
             $table->integer('cantidad');
 
-            $table->foreign('usuario_id')->references('id')->on('users');
-            $table->foreign('producto_id')->references('id')->on('productos');
+            //$table->foreign('usuario_id')->references('id')->on('users');
+            //$table->foreign('producto_id')->references('id')->on('productos');
 
             $table->timestamps();
         });
